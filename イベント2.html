@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ボタンのクリック</title>
+    <script>
+    	window.onload = function() {
+    		document.getElementById("yes").onclick = yeshandler;
+    		document.getElementById("no").onclick = nohandler;
+    	}
+    	function yeshandler(e) {
+    		document.getElementById("status").textContent = "はいが選ばれました"
+    	}
+    	function nohandler(e) {
+    		document.getElementById("status").textContent = "いいえが選ばれました"
+    	}
+        /* 11～16行目は
+        function myhandler(e) {
+            document.getElementById("status").textContent =
+                e.target.textContent + "が選ばれました"
+        }
+        でも同じ効果になる。 */ 
+    </script> 
+</head>
+
+<body>
+	<button id="yes">はい</button>
+	<button id="no">いいえ</button>
+	<h2 id="status"></h2>
+</body>	
+</html>
